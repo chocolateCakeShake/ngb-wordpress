@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
+import { Posts } from "../interfaces/posts.interface";
+import { Observable } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { environment } from "../../environments/environment";
 export class PostsService {
 
   private apiUrls = {
-    posts: '/wp/v2/posts',
+    posts: '/wp-json/wp/v2/posts',
   }
 
   constructor(
@@ -16,10 +18,8 @@ export class PostsService {
   ) { }
 
 
-  getPosts() {
-    return this.httpClient.get(`${environment.wpUrl}${this.apiUrls.posts}`, {
-
-    });
+  getPosts(): Observable<Posts[]> {
+    return this.httpClient.get<Posts[]>(`${environment.wpUrl}${this.apiUrls.posts}`);
   }
 
 

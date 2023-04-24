@@ -1,3 +1,3 @@
 export const environment = {
-  wpUrl : 'https://carspiritpk.com/',
+  wpUrl : 'http://localhost:8080/https://carspiritpk.com',
 };
