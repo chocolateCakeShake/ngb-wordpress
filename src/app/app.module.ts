@@ -8,10 +8,12 @@ import { SinglePostComponent } from "./components/single-post/single-post.compon
 import { HomepageComponent } from "./components/pages/homepage.component";
 import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './components/header/header.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: [AppComponent, SinglePostComponent, HomepageComponent, HeaderComponent],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule],
+  declarations: [AppComponent, SinglePostComponent, HomepageComponent, HeaderComponent, PostsComponent],
+  imports: [BrowserModule, HttpClientModule, AppRoutingModule, NgbModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

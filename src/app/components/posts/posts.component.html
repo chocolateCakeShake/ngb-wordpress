@@ -1,0 +1,11 @@
+<div class="container my-2">
+  <div class="row">
+    <div *ngFor="let post of posts"
+      [routerLink]="['/',post.slug]"
+      class="col-4 border-light">
+      <h2 [innerHTML]="post.title.rendered"></h2>
+      <small [innerHTML]="post.excerpt.rendered"></small>
+      <p>{{post.date | date }}</p>
+    </div>
+  </div>
+</div>
